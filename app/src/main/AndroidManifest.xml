@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <!-- Говорит системе, что это главное приложение для запуска -->
+                <action android:name="android.intent.action.MAIN" />
+                
+                <!-- Позволяет отображать приложение в общем списке (для тестов) -->
+                <category android:name="android.category.LAUNCHER" />
+                
+                <!-- КРИТИЧНО ДЛЯ ЛАУНЧЕРА: Делает приложение домашним экраном -->
+                <category android:name="android.category.HOME" />
+                <category android:name="android.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
